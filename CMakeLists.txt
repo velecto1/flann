@@ -180,7 +180,7 @@ if (BUILD_DOC)
 endif (BUILD_DOC)
 
 # CMake configuration file creation
-# Include module with fuction 'write_basic_package_version_file'
+# Include module with function 'write_basic_package_version_file'
 include(CMakePackageConfigHelpers)
 
 # Configure 'flann-config-version.cmake'
