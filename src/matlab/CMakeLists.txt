@@ -16,16 +16,15 @@ endif()
 
 find_program(OCT_CMD mkoctfile)
 
-get_property(FLANN_LIB_LOCATION TARGET flann_s PROPERTY LOCATION)
-get_filename_component(FLANN_LIB_PATH ${FLANN_LIB_LOCATION} PATH)
+get_filename_component(FLANN_LIB_PATH flann_s DIRECTORY)
 
 if(MEX_CMD AND MEXEXT_CMD)
 
     get_filename_component(MEX_REAL_CMD ${MEX_CMD} ABSOLUTE)
-    get_filename_component(MEX_PATH ${MEX_REAL_CMD} PATH)
+    get_filename_component(MEX_PATH ${MEX_REAL_CMD} DIRECTORY)
 
     get_filename_component(MEXEXT_REAL_CMD ${MEXEXT_CMD} ABSOLUTE)
-    get_filename_component(MEXEXT_PATH ${MEXEXT_REAL_CMD} PATH)
+    get_filename_component(MEXEXT_PATH ${MEXEXT_REAL_CMD} DIRECTORY)
 
     if (MEX_PATH STREQUAL MEXEXT_PATH)
         message(STATUS "Found MATLAB at: " ${MEX_PATH})
